@@ -15,15 +15,15 @@ MonoBehaviour:
   m_GroupName: Gym
   m_Data:
     m_SerializedData: []
-  m_GUID: 2afce7eb3cad63c4a9c9b241c552246b
+  m_GUID: 564d5af4bab97b14cb4a2f7d468299e4
   m_SerializeEntries:
-  - m_GUID: e3966612c28ae774681acb77facf2e58
+  - m_GUID: ff8752b88c444cd43beca6d71b43fb15
     m_Address: Gym
     m_ReadOnly: 0
     m_SerializedLabels: []
   m_ReadOnly: 0
-  m_Settings: {fileID: 11400000, guid: 5d91b24ee237ff941b1f686fdad267f1, type: 2}
+  m_Settings: {fileID: 11400000, guid: 476b8e0ad337c954d8e2faf5289dcc55, type: 2}
   m_SchemaSet:
     m_Schemas:
-    - {fileID: 11400000, guid: f9317470aca724848b0ee43006d5c90f, type: 2}
-    - {fileID: 11400000, guid: 5f1106e48da2f4549a11f3de0e70a230, type: 2}
+    - {fileID: 11400000, guid: b40bc60513ba3144aa19e5195a4d3628, type: 2}
+    - {fileID: 11400000, guid: 65f0cf23f7a27df48b2895ebb27be4cc, type: 2}

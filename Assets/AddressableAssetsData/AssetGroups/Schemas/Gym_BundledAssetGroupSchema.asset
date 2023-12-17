@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5d17a21594effb4e9591490b009e7aa, type: 3}
   m_Name: Gym_BundledAssetGroupSchema
   m_EditorClassIdentifier: 
-  m_Group: {fileID: 11400000, guid: efe8370be05cdc6418ee5ae757d27dc8, type: 2}
+  m_Group: {fileID: 11400000, guid: 5c5c0ada8562d064f9aaf90dbfbe9917, type: 2}
   m_InternalBundleIdMode: 1
   m_Compression: 1
   m_IncludeAddressInCatalog: 1
@@ -34,9 +34,9 @@ MonoBehaviour:
   m_RedirectLimit: -1
   m_RetryCount: 0
   m_BuildPath:
-    m_Id: 81e2de83154287b409c946dff907c5cd
+    m_Id: 6fad7d6ecca03314f8c7b35ec4b1b53e
   m_LoadPath:
-    m_Id: 2f6291109bc0a65459fce645178b9b68
+    m_Id: d5c8e8d12f132c54e8a7d9bb020fdce5
   m_BundleMode: 0
   m_AssetBundleProviderType:
     m_AssemblyName: Unity.ResourceManager, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null

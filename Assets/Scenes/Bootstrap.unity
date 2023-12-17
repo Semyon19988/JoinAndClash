@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12731749, g: 0.13414757, b: 0.1210787, a: 1}
+  m_IndirectSpecularColor: {r: 0.12731713, g: 0.13414736, b: 0.12107852, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -123,7 +123,7 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &691078563
+--- !u!1 &865748722
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -131,9 +131,9 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 691078564}
-  - component: {fileID: 691078565}
-  - component: {fileID: 691078566}
+  - component: {fileID: 865748723}
+  - component: {fileID: 865748724}
+  - component: {fileID: 865748725}
   m_Layer: 0
   m_Name: Initialization
   m_TagString: Untagged
@@ -141,13 +141,13 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &691078564
+--- !u!4 &865748723
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 691078563}
+  m_GameObject: {fileID: 865748722}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -155,29 +155,29 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &691078565
+--- !u!114 &865748724
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 691078563}
+  m_GameObject: {fileID: 865748722}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 12338e8a60c9a754e8b166b4ad4f3614, type: 3}
+  m_Script: {fileID: 11500000, guid: b180179a1a524d2bbc6e4fb7db360f70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _stateMachineFactory: {fileID: 691078566}
---- !u!114 &691078566
+  _stateMachineFactory: {fileID: 865748725}
+--- !u!114 &865748725
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 691078563}
+  m_GameObject: {fileID: 865748722}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 26ff49000b6a44a8843a09a046acab23, type: 3}
+  m_Script: {fileID: 11500000, guid: 7b511fd1a69c4b5cbe8f16c9adeb9358, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _level:

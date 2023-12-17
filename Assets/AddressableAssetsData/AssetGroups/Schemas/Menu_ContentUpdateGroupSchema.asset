@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c6f6cf45213e46a8afacbc5c9c66f6d9, type: 3}
-  m_Name: GameStateMachine
+  m_Script: {fileID: 11500000, guid: 5834b5087d578d24c926ce20cd31e6d6, type: 3}
+  m_Name: Menu_ContentUpdateGroupSchema
   m_EditorClassIdentifier: 
-  _states:
-  - {fileID: 11400000, guid: fedf5561e4cd750478a6c54cf8a0d41f, type: 2}
+  m_Group: {fileID: 11400000, guid: 25289f55912be904aaba155407e99bd5, type: 2}
+  m_StaticContent: 0

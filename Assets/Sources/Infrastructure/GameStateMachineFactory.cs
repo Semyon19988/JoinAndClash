@@ -17,7 +17,9 @@ namespace Infrastructure
 			IGameState[] states =
 			{
 				new BootstrapState(_level, _menu, sceneLoading),
-				new GameplayState(_menu, sceneLoading)
+				new GameplayStartState(_menu, sceneLoading),
+				new PauseState(), 
+				new GameplayState()
 			};
 
 			return new GameStateMachine(states);

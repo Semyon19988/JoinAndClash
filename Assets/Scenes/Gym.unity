@@ -362,10 +362,13 @@ MonoBehaviour:
   _attackPreferences:
     Damage: 10
     TimeBetweenAttacks: 1
+    PunchSound: {fileID: 8300000, guid: a37f44cbf8c2a7443a3c361efa2f233a, type: 3}
   _controller: {fileID: 9100000, guid: 1f6ad197869d51f47870dee88834a930, type: 2}
   _pickTriggerZonePrefab: {fileID: 8508821590894950968, guid: 039737f9773b7364abadc164e2b9d661, type: 3}
   _pathFinishTrigger: {fileID: 1611586653}
   _groundTag: Ground
+  _pickSound: {fileID: 8300000, guid: 0ffddc3df647cb6468a6d6ce88026499, type: 3}
+  _deathSound: {fileID: 8300000, guid: e1a75776f005439469f89a17a986c567, type: 3}
   _playerView: {fileID: 6234118208258053383}
   _otherViews:
   - {fileID: 346695015}
@@ -400,11 +403,13 @@ MonoBehaviour:
     Speed: 5
     AttackDistance: 2
   _attackPreferences:
-    Damage: 10
-    TimeBetweenAttacks: 1
+    Damage: 12
+    TimeBetweenAttacks: 1.2
+    PunchSound: {fileID: 8300000, guid: a37f44cbf8c2a7443a3c361efa2f233a, type: 3}
   _hordeRoot: {fileID: 101437217}
   _pathFinishTrigger: {fileID: 1611586653}
   _controller: {fileID: 9100000, guid: 1f6ad197869d51f47870dee88834a930, type: 2}
+  _deathSound: {fileID: 8300000, guid: e1a75776f005439469f89a17a986c567, type: 3}
   _enemies:
   - {fileID: 1244486143}
   - {fileID: 1899430229}

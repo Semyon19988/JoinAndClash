@@ -1108,6 +1108,7 @@ GameObject:
   - component: {fileID: 1464699648}
   - component: {fileID: 1464699647}
   - component: {fileID: 1464699646}
+  - component: {fileID: 1464699649}
   m_Layer: 5
   m_Name: SoundButton
   m_TagString: Untagged
@@ -1229,6 +1230,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1464699644}
   m_CullTransparentMesh: 1
+--- !u!114 &1464699649
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1464699644}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd85cfdf167c4bae95a2f3d514775b93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sfxVolumeParameter: SfxVolume
+  _mixer: {fileID: 24100000, guid: 432c946bbb77352409de51ab0c06cf2e, type: 2}
+  _colors:
+    Enabled: {r: 0.5686275, g: 1, b: 0.5529412, a: 1}
+    Disabled: {r: 0.9339623, g: 0.4381115, b: 0.38239586, a: 1}
 --- !u!1 &1724855016
 GameObject:
   m_ObjectHideFlags: 0

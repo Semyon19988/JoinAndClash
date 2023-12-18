@@ -67,6 +67,9 @@ namespace Sources.CompositeRoot
 		public IReadOnlyDictionary<StickmanMovement, PhysicsTransformableView> PlacedEntities => _placedEntities;
 
 		public StickmanMovement Player { get; private set; }
+
+		public PhysicsTransformableView ViewOf(StickmanMovement stickman) =>
+			_placedEntities[stickman];
 		
 		private StickmanMovement Compose(PhysicsTransformableView view)
 		{

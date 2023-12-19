@@ -3,6 +3,7 @@
   <component name="ContentModelUserStore">
     <attachedFolders />
     <explicitIncludes>
+      <Path>Assets</Path>
       <Path>Library/PackageCache/com.unity.addressables@1.18.19</Path>
       <Path>Library/PackageCache/com.unity.cinemachine@2.7.9</Path>
       <Path>Library/PackageCache/com.unity.collab-proxy@1.7.1</Path>

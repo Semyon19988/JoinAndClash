@@ -415,6 +415,9 @@ MonoBehaviour:
   _touchPanel: {fileID: 853115438}
   _camera: {fileID: 190327961}
   _allies: {fileID: 101437218}
+  _preferences:
+    MaxSpeed: 10
+    AccelerationTime: 0.3
   _targetGroup: {fileID: 852863406}
 --- !u!114 &101437218
 MonoBehaviour:
@@ -430,8 +433,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _enemiesRoot: {fileID: 101437219}
   _distanceBetweenBounds: 9.6
-  _maxMovementSpeed: 10
-  _accelerationTime: 0.3
   _health: 100
   _chargePreferences:
     Speed: 5
@@ -552,12 +553,16 @@ MonoBehaviour:
   - {fileID: 459972800}
   - {fileID: 562675442}
   - {fileID: 24172467}
+  _par: 5
   _boosters:
   - {fileID: 627574268}
   - {fileID: 674098551}
-  _par: 5
+  _preferences:
+    Time: 1
+    SpeedMultiplier: 2
   _currencyRoot: {fileID: 101437221}
   _alliesRoot: {fileID: 101437218}
+  _hordeRoot: {fileID: 101437217}
 --- !u!1001 &128764236
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7349,7 +7354,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 0.9422351, y: 1}
+    m_SensorSize: {x: 0.5625, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0

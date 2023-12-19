@@ -18,30 +18,44 @@ namespace Sources.CompositeRoot
 
 		[Header("Coins")] 
 		[SerializeField] private Trigger[] _coins = Array.Empty<Trigger>();
-		[SerializeField] private Trigger[] _boosters = Array.Empty<Trigger>();
-
 		[SerializeField] private int _par;
+		
+		[Header("Boosters")] 
+		[SerializeField] private Trigger[] _boosters = Array.Empty<Trigger>();
+		[SerializeField] private Booster.Preferences _preferences;
 
 		[Header("Roots")] 
 		[SerializeField] private CurrencyCompositionRoot _currencyRoot;
 		[SerializeField] private AlliesCompositionRoot _alliesRoot;
+		[SerializeField] private HordeCompositionRoot _hordeRoot;
 
 		private Wallet Wallet => _currencyRoot.Wallet;
+
+		private StickmanHordeMovement HordeMovement => _hordeRoot.HordeMovement;
 		
+		private readonly List<Booster> _boostersToTick = new List<Booster>();
 		public override void Compose()
 		{
 			Compose(_coins, () => new Coin(_par), Wallet.Add);
-			Compose(_boosters, () => new Booster(), null);
+			Compose(_boosters, () => new Booster(_preferences, HordeMovement), booster =>
+			{
+				booster.Apply();
+				HordeMovement.Bind(booster);
+				_boostersToTick.Add(booster);
+			});
 		}
 
-		private void Compose<TModel>(IEnumerable<Trigger> triggers, Func<TModel> construction, Action<TModel> onTrigger)
+		private void Update() =>
+			_boostersToTick.ForEach(x => x.Tick(Time.deltaTime));
+
+		private void Compose<TModel>(IEnumerable<Trigger> triggers, Func<TModel> construction, Action<TModel> onTriggerEnter)
 		{
 			foreach (Trigger trigger in triggers)
 			{
 				TModel model = construction.Invoke();
 				trigger.Between<TModel, (StickmanHorde, StickmanMovement)>(model, tuple =>
 				{
-					onTrigger?.Invoke(model);
+					onTriggerEnter?.Invoke(model);
 					trigger.gameObject.SetActive(false);
 
 					(_, StickmanMovement stickman) = tuple;

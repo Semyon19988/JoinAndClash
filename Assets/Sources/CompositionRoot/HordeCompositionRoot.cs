@@ -22,18 +22,22 @@ namespace Sources.CompositeRoot
 		[Header("Roots")]
 		[SerializeField] private AlliesCompositionRoot _allies;
 
+		[Header("Movement")] 
+		[SerializeField] private StickmanHordeMovement.Preferences _preferences;
+
 		[Header("Camera")]
 		[SerializeField] private CinemachineTargetGroup _targetGroup;
 
 		private HordeInputRouter _inputRouter;
 		private HordeViewChanger _viewChanger;
 		private StickmanHorde _horde;
+		public StickmanHordeMovement HordeMovement { get; private set; }
 
 		public override void Compose()
 		{
 			_horde = new StickmanHorde(_allies.Player);
-			var hordeMovement = new StickmanHordeMovement(_horde);
-			_inputRouter = new HordeInputRouter(_swipePanel, _touchPanel, hordeMovement, _camera);
+			HordeMovement = new StickmanHordeMovement(_horde, _preferences).Initialize();
+			_inputRouter = new HordeInputRouter(_swipePanel, _touchPanel, HordeMovement, _camera);
 			_viewChanger = new HordeViewChanger(_horde, _targetGroup, _allies.PlacedEntities).Initialize();
 		}
 
@@ -44,12 +48,14 @@ namespace Sources.CompositeRoot
 
 		private void OnEnable()
 		{
+			HordeMovement.OnEnable();
 			_inputRouter.OnEnable();
 			_viewChanger.OnEnable();
 		}
 
 		private void OnDisable()
 		{
+			HordeMovement.OnDisable();
 			_inputRouter.OnDisable();
 			_viewChanger.OnDisable();
 		}

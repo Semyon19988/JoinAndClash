@@ -6,7 +6,6 @@ namespace Model.Props
 	public class Booster : MovementStatsDecorator, ITickable
 	{
 		[System.Serializable]
-
 		public struct Preferences
 		{
 			public float Time;
@@ -15,7 +14,7 @@ namespace Model.Props
 
 		private readonly Preferences _preferences;
 		private readonly Timer _timer = new Timer();
-
+		
 		public Booster(Preferences preferences, IMovementStatsProvider wrappedEntity) : base(wrappedEntity)
 		{
 			_preferences = preferences;
@@ -30,7 +29,7 @@ namespace Model.Props
 		{
 			_timer.Tick(deltaTime);
 		}
-		
+
 		protected override MovementStats Decorate(IMovementStatsProvider statsProvider)
 		{
 			MovementStats stats = statsProvider.Stats();

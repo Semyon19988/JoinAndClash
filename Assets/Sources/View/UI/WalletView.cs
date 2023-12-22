@@ -1,5 +1,5 @@
-﻿using TMPro;
-using Model.Currency;
+﻿using Model.Currency;
+using TMPro;
 using UnityEngine;
 
 namespace Sources.View.UI
@@ -14,6 +14,7 @@ namespace Sources.View.UI
 		{
 			_wallet = wallet;
 			_wallet.Changed += OnWalletBalanceChanged;
+			
 			OnWalletBalanceChanged();
 		}
 

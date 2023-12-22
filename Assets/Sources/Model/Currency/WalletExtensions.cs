@@ -2,7 +2,7 @@
 {
 	public static class WalletExtensions
 	{
-		public static void Add(this Wallet wallet, Coin coin) =>
+		public static void Add(this Wallet wallet, Coin coin) => 
 			wallet.Add(coin.Par);
 	}
 }

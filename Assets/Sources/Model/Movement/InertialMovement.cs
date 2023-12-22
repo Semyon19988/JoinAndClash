@@ -10,13 +10,15 @@ namespace Model.Sources.Model.Movement
 		{
 			_provider = provider;
 		}
-		
+
 		public float Acceleration { get; private set; }
 
 		private MovementStats Stats => _provider.Stats();
 
-		public void Bind(IMovementStatsProvider provider) =>
+		public void Bind(IMovementStatsProvider provider)
+		{
 			_provider = provider;
+		}
 
 		public void Accelerate(float deltaTime)
 		{

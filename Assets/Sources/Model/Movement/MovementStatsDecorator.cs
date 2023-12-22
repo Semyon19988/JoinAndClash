@@ -8,9 +8,8 @@
 		{
 			_wrappedEntity = wrappedEntity;
 		}
-		
-		public MovementStats Stats() =>
-			Decorate(_wrappedEntity);
+
+		public MovementStats Stats() => Decorate(_wrappedEntity);
 
 		protected abstract MovementStats Decorate(IMovementStatsProvider statsProvider);
 	}

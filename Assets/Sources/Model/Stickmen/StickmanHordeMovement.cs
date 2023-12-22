@@ -1,13 +1,11 @@
 ﻿using System.Linq;
 using Model.Sources.Model.Movement;
-using UnityEngine;
 
 namespace Model.Stickmen
 {
 	public class StickmanHordeMovement : IMovementStatsProvider
 	{
 		[System.Serializable]
-		
 		public struct Preferences
 		{
 			public float MaxSpeed;
@@ -22,7 +20,7 @@ namespace Model.Stickmen
 		{
 			_horde = horde;
 			_preferences = preferences;
-			
+
 			_inertialMovement = new InertialMovement(this);
 		}
 
@@ -30,7 +28,7 @@ namespace Model.Stickmen
 		{
 			_horde.Added += OnStickmanAdded;
 		}
-		
+
 		public void OnDisable()
 		{
 			_horde.Added -= OnStickmanAdded;
@@ -38,22 +36,20 @@ namespace Model.Stickmen
 
 		public StickmanHordeMovement Initialize()
 		{
-			foreach (StickmanMovement stickman in _horde.Stickmans)
-			{
+			foreach (StickmanMovement stickman in _horde.Stickmans) 
 				stickman.Bind(_inertialMovement);
-			}
 
 			return this;
 		}
 		
-		public MovementStats Stats() =>
+		public MovementStats Stats() => 
 			new MovementStats(_preferences.MaxSpeed, _preferences.AccelerationTime);
 
 		public void Bind(IMovementStatsProvider provider)
 		{
 			_inertialMovement.Bind(provider);
 		}
-
+		
 		public void Accelerate(float deltaTime)
 		{
 			foreach (StickmanMovement stickman in _horde.Stickmans)

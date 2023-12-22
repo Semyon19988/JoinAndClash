@@ -1,6 +1,4 @@
-﻿using Codice.Client.Common.Connection;
-
-namespace Model.Sources.Model.Movement
+﻿namespace Model.Sources.Model.Movement
 {
 	public interface IMovementStatsProvider
 	{
@@ -10,7 +8,7 @@ namespace Model.Sources.Model.Movement
 		{
 			public MovementStats Stats()
 			{
-				return new MovementStats(0.0f,1.0f);
+				return new MovementStats(0.0f, 1.0f);
 			}
 		}
 	}

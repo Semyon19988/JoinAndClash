@@ -32,6 +32,6 @@ namespace Model.Stickmen
 			Removed?.Invoke(stickman);
 		}
 
-		public IEnumerable<Stickman> Entities => _stickmans.Select(x => x.Model);
+		public IEnumerable<Entity> Entities => _stickmans.Select(x => x.Model);
 	}
 }

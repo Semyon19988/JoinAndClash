@@ -10,6 +10,7 @@ namespace Sources.CompositeRoot
 		[SerializeField] private WalletView _walletView;
 		
 		public Wallet Wallet { get; private set; }
+		
 		public override void Compose()
 		{
 			Wallet = new Wallet(0);

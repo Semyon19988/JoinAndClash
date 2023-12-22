@@ -8,7 +8,7 @@ namespace Model.Currency
 
 		public Coin(int par)
 		{
-			if (par <= 0) 
+			if (par <= 0)
 				throw new ArgumentOutOfRangeException(nameof(par));
 
 			Par = par;

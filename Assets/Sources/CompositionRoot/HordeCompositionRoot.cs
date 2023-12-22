@@ -8,7 +8,6 @@ using Model.Stickmen;
 using Sources.CompositeRoot.Base;
 using Sources.View;
 using UnityEngine;
-using View.Sources.View.Broadcasters;
 
 namespace Sources.CompositeRoot
 {
@@ -22,15 +21,16 @@ namespace Sources.CompositeRoot
 		[Header("Roots")]
 		[SerializeField] private AlliesCompositionRoot _allies;
 
-		[Header("Movement")] 
-		[SerializeField] private StickmanHordeMovement.Preferences _preferences;
-
 		[Header("Camera")]
 		[SerializeField] private CinemachineTargetGroup _targetGroup;
 
+		[Header("Movement")] 
+		[SerializeField] private StickmanHordeMovement.Preferences _preferences;
+		
 		private HordeInputRouter _inputRouter;
 		private HordeViewChanger _viewChanger;
 		private StickmanHorde _horde;
+		
 		public StickmanHordeMovement HordeMovement { get; private set; }
 
 		public override void Compose()
@@ -41,7 +41,7 @@ namespace Sources.CompositeRoot
 			_viewChanger = new HordeViewChanger(_horde, _targetGroup, _allies.PlacedEntities).Initialize();
 		}
 
-		public IEnumerable<Stickman> Entities()
+		public IEnumerable<Entity> Entities()
 		{
 			return _horde.Entities.Where(x => x.IsDead == false);
 		}

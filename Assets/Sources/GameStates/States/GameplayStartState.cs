@@ -14,9 +14,13 @@ namespace GameStates.States
 			_sceneLoading = sceneLoading;
 		}
 
-		public async void Enter() => 
-			await _sceneLoading.UnloadAsync(_menu);
+		public async void Enter()
+		{
+			await _sceneLoading.UnloadAsync(_menu);			
+		}
 
-		public void Exit() { }
+		public void Exit()
+		{
+		}
 	}
 }

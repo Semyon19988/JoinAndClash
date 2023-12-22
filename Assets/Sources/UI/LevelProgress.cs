@@ -1,24 +1,26 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-namespace Sources.UI
+namespace UI
 {
 	public class LevelProgress : MonoBehaviour
 	{
-		[Header("Path")] 
+		[Header("Path")]
 		[SerializeField] private Transform _start;
 		[SerializeField] private Transform _end;
-		
-		[Header("Horde")] 
+
+		[Header("Horde")]
 		[SerializeField] private Transform _horde;
 
-		[Header("UI")] 
+		[Header("UI")]
 		[SerializeField] private Slider _slider;
 
-		private float _distance;
-
-		private void Start() => 
+		private float _distance;		
+		
+		private void Start()
+		{
 			_distance = _end.position.z - _start.position.z;
+		}
 
 		private void Update()
 		{

@@ -12,11 +12,11 @@ namespace Menu
 	[RequireComponent(typeof(Image))]
 	public class SfxVolumeButton : MonoBehaviour
 	{
-		[Header("Audio")] 
+		[Header("Audio")]
 		[SerializeField] private string _sfxVolumeParameter;
 		[SerializeField] private AudioMixer _mixer;
 
-		[Header("View")] 
+		[Header("View")]
 		[SerializeField] private Colors _colors;
 
 		private void Start()
@@ -25,7 +25,7 @@ namespace Menu
 			Image image = GetComponent<Image>();
 			IEnumerator<Action> statesEnumerator = new States(_mixer, image, _colors, _sfxVolumeParameter)
 				.GetEnumerator();
-			
+
 			button.onClick.AddListener(() =>
 			{
 				statesEnumerator.MoveNext();
@@ -34,7 +34,6 @@ namespace Menu
 		}
 		
 		[Serializable]
-		
 		private struct Colors
 		{
 			public Color Enabled;
@@ -63,10 +62,13 @@ namespace Menu
 			{
 				Action[] actions = Values().ToArray();
 
-				for (int i = 0; i < actions.Length; i = (i +1) % actions.Length)
-				{
+				for (int i = 0; i < actions.Length; i = (i + 1) % actions.Length)
 					yield return actions[i];
-				}
+			}
+
+			IEnumerator IEnumerable.GetEnumerator()
+			{
+				return GetEnumerator();
 			}
 
 			private IEnumerable<Action> Values()
@@ -76,20 +78,13 @@ namespace Menu
 					_mixer.SetFloat(_volumeParameter, Disabled);
 					_image.color = _colors.Disabled;
 				};
+				
 				yield return () =>
 				{
 					_mixer.SetFloat(_volumeParameter, Enabled);
 					_image.color = _colors.Enabled;
 				};
-
-
-			}
-
-			IEnumerator IEnumerable.GetEnumerator()
-			{
-				return GetEnumerator();
 			}
 		}
 	}
-	
 }

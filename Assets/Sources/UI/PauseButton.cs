@@ -4,13 +4,13 @@ using StaticContext;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Sources.UI
+namespace UI
 {
 	[RequireComponent(typeof(Button))]
 	public class PauseButton : MonoBehaviour
 	{
 		[SerializeField] private GameObject _pausePanel;
-
+		
 		private void Start()
 		{
 			Button button = GetComponent<Button>();

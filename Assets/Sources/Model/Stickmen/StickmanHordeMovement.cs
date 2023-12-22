@@ -1,17 +1,55 @@
 ﻿using System.Linq;
-using UnityEngine;
+using Model.Sources.Model.Movement;
 
 namespace Model.Stickmen
 {
-	public class StickmanHordeMovement
+	public class StickmanHordeMovement : IMovementStatsProvider
 	{
-		private readonly StickmanHorde _horde;
+		[System.Serializable]
+		public struct Preferences
+		{
+			public float MaxSpeed;
+			public float AccelerationTime;
+		}
 		
-		public StickmanHordeMovement(StickmanHorde horde)
+		private readonly StickmanHorde _horde;
+		private readonly Preferences _preferences;
+		private readonly InertialMovement _inertialMovement;
+		
+		public StickmanHordeMovement(StickmanHorde horde, Preferences preferences)
 		{
 			_horde = horde;
+			_preferences = preferences;
+
+			_inertialMovement = new InertialMovement(this);
 		}
 
+		public void OnEnable()
+		{
+			_horde.Added += OnStickmanAdded;
+		}
+
+		public void OnDisable()
+		{
+			_horde.Added -= OnStickmanAdded;
+		}
+
+		public StickmanHordeMovement Initialize()
+		{
+			foreach (StickmanMovement stickman in _horde.Stickmans) 
+				stickman.Bind(_inertialMovement);
+
+			return this;
+		}
+		
+		public MovementStats Stats() => 
+			new MovementStats(_preferences.MaxSpeed, _preferences.AccelerationTime);
+
+		public void Bind(IMovementStatsProvider provider)
+		{
+			_inertialMovement.Bind(provider);
+		}
+		
 		public void Accelerate(float deltaTime)
 		{
 			foreach (StickmanMovement stickman in _horde.Stickmans)
@@ -45,6 +83,12 @@ namespace Model.Stickmen
 		private bool CanMove(float axis)
 		{
 			return _horde.Stickmans.Any(x => x.OnRightBound && axis > 0.0f || x.OnLeftBound && axis < 0.0f) == false;
+		}
+
+		private void OnStickmanAdded(StickmanMovement stickman)
+		{
+			stickman.StartMovingRight();
+			stickman.Bind(_inertialMovement);
 		}
 	}
 }

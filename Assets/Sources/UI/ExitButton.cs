@@ -4,7 +4,7 @@ using StaticContext;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Sources.UI
+namespace UI
 {
 	[RequireComponent(typeof(Button))]
 	public class ExitButton : MonoBehaviour

@@ -13,14 +13,14 @@ namespace Model.Currency
 		}
 
 		public event Action Changed;
-		
+
 		public int Balance { get; private set; }
 
 		public void Add(int balance)
 		{
-			if (balance<0)
+			if (balance < 0)
 				throw new ArgumentOutOfRangeException(nameof(balance));
-
+			
 			Balance += balance;
 			Changed?.Invoke();
 		}
@@ -29,8 +29,8 @@ namespace Model.Currency
 		{
 			if (balance < 0)
 				throw new ArgumentOutOfRangeException(nameof(balance));
-			
-			if (balance < balance)
+
+			if (Balance < balance)
 				return;
 
 			Balance -= balance;

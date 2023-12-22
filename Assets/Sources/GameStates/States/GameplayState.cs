@@ -6,12 +6,10 @@ namespace GameStates.States
 	{
 		public void Enter()
 		{
-			
 		}
 
 		public void Exit()
 		{
-		
 		}
 	}
 }

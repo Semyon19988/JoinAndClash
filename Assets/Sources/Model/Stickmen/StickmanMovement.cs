@@ -1,20 +1,21 @@
 ﻿using System;
 using Model.Physics;
+using Model.Sources.Model.Movement;
 using UnityEngine;
 
 namespace Model.Stickmen
 {
 	public class StickmanMovement
 	{
-		public readonly Stickman Model;
+		public readonly Entity Model;
 		
 		private readonly SurfaceSliding _surfaceSliding;
-		private readonly InertialMovement _inertialMovement;
 		private readonly float _distanceBetweenBounds;
-		
+
+		private InertialMovement _inertialMovement;
 		private Vector3 _startMovePosition;
 		
-		public StickmanMovement(Stickman model, SurfaceSliding surfaceSliding, InertialMovement inertialMovement, float distanceBetweenBounds)
+		public StickmanMovement(Entity model, SurfaceSliding surfaceSliding, InertialMovement inertialMovement, float distanceBetweenBounds)
 		{
 			Model = model;
 			_surfaceSliding = surfaceSliding;
@@ -29,6 +30,11 @@ namespace Model.Stickmen
 		public float Acceleration => _inertialMovement.Acceleration;
 		
 		private float DistanceToBound => _distanceBetweenBounds / 2.0f;
+
+		public void Bind(InertialMovement movement)
+		{
+			_inertialMovement = movement;
+		}
 		
 		public void StartMovingRight()
 		{

@@ -8,7 +8,6 @@ namespace Sources.CompositeRoot
 	public class CurrencyCompositionRoot : CompositionRoot
 	{
 		[SerializeField] private WalletView _walletView;
-		[SerializeField] private ExtraCoinsButton _extraCoinsButton;
 		
 		public Wallet Wallet { get; private set; }
 		
@@ -16,7 +15,6 @@ namespace Sources.CompositeRoot
 		{
 			Wallet = new Wallet(0);
 			_walletView.Initialize(Wallet);
-			_extraCoinsButton.Initialize(Wallet);
 		}
 	}
 }

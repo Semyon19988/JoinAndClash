@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using Model;
 using Model.Components;
-using Model.Obstacles;
 using Model.Physics;
 using Model.Sources.Model.Movement;
 using Model.Sources.Model.StateMachine.States.FightStates;
